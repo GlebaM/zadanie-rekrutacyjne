@@ -1,0 +1,25 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__child {
+  width: 50vw;
+  height: 50vw;
+  background-color: #ccc;
+}
+
+.app__child:hover {
+  background-color: hsl(0, 0%, 70%);
+}
+
+.app__child:active:focus {
+  background-color: #00ff00;
+}
+
+.changed-color {
+  background-color: #ff0000;
+}

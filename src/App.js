@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import classes from "./App.module.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // let timeout;
+    if (count === 3) {
+      let timeout = setTimeout(() => {
+        setCount(0);
+      }, 2000);
+    }
+  }, [count]);
+
+  const clickHandler = (e) => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div onClick={clickHandler} className={classes.app}>
+      <div
+        className={`${classes.app__child} ${
+          count === 3 && classes["changed-color"]
+        }`}
+      ></div>
     </div>
   );
 }
