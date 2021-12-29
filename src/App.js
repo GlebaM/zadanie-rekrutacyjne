@@ -5,7 +5,6 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // let timeout;
     if (count === 3) {
       let timeout = setTimeout(() => {
         setCount(0);
@@ -13,7 +12,10 @@ function App() {
     }
   }, [count]);
 
+  console.log(count);
+
   const clickHandler = (e) => {
+    if (count >= 3) return;
     setCount((prevCount) => prevCount + 1);
   };
 

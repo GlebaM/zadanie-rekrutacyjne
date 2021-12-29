@@ -16,7 +16,7 @@
   background-color: hsl(0, 0%, 70%);
 }
 
-.app__child:active:focus {
+.app__child:focus {
   background-color: #00ff00;
 }
 
