@@ -6,13 +6,11 @@ function App() {
 
   useEffect(() => {
     if (count === 3) {
-      let timeout = setTimeout(() => {
+      setTimeout(() => {
         setCount(0);
       }, 2000);
     }
   }, [count]);
-
-  console.log(count);
 
   const clickHandler = (e) => {
     if (count >= 3) return;
@@ -20,8 +18,10 @@ function App() {
   };
 
   return (
-    <div onClick={clickHandler} className={classes.app}>
+    <div className={classes.app}>
       <div
+        id="square"
+        onClick={clickHandler}
         className={`${classes.app__child} ${
           count === 3 && classes["changed-color"]
         }`}

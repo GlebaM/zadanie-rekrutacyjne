@@ -10,16 +10,17 @@
   width: 50vw;
   height: 50vw;
   background-color: #ccc;
+  border-radius: 10%;
 }
 
 .app__child:hover {
   background-color: hsl(0, 0%, 70%);
 }
 
-.app__child:focus {
+.app .app__child:active {
   background-color: #00ff00;
 }
 
-.changed-color {
+.app__child.changed-color {
   background-color: #ff0000;
 }
